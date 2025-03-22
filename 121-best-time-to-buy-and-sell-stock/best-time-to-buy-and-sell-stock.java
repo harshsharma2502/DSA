@@ -1,39 +1,17 @@
 class Solution {
     public int maxProfit(int[] prices) {
-        int Buy = Integer.MAX_VALUE;
-        int profit = 0;
-        int MaxProfit = 0;
+        int BuyPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
         for(int i=0; i<prices.length; i++){
-            if(Buy<prices[i]){
-                profit = prices[i] - Buy;
-            MaxProfit = Math.max(MaxProfit,profit);
+            if(BuyPrice<prices[i]){
+                int profit = prices[i] - BuyPrice;
+                maxProfit = Math.max(maxProfit,profit);
             }
-            else{
-                Buy = prices[i];
+            else
+            {
+                BuyPrice = prices[i];
             }
         }
-        return MaxProfit;
+        return maxProfit;
     }
 }
-// class Solution {
-//     public int maxProfit(int[] prices) 
-//     {
-//         int BuyPrice = Integer.MAX_VALUE;
-//         int MaxProfit = 0;
-
-//         for(int i=0; i<prices.length; i++)
-//         {
-//             if(BuyPrice<prices[i])
-//             {
-//                 int profit = prices[i]-BuyPrice;
-//                 MaxProfit = Math.max(MaxProfit, profit);
-//             }
-
-//             else
-//             {
-//                 BuyPrice = prices[i];
-//             }
-//         }
-//         return MaxProfit;
-//     }
-// }
