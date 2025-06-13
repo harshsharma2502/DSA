@@ -1,26 +1,23 @@
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
-        int res[] = new int [1001];
-        for(int num : nums1)
-        {
-            res[num]++;
-        }
-        ArrayList<Integer> list = new ArrayList<>();
-        for(int num : nums2)
-        {
-            if(res[num] > 0)
-            {
-                list.add(num);
-                res[num]--;
+       ArrayList<Integer> list = new ArrayList<>();
+
+        for(int i = 0; i < nums1.length; i++) {
+            for(int j = 0; j < nums2.length; j++) {
+                if(nums1[i] == nums2[j]) {
+                    list.add(nums2[j]);
+                    nums2[j] = Integer.MAX_VALUE; // mark as used
+                    break;
+                }
             }
         }
-        int result[] = new int[list.size()];
+        int arr[] = new int[list.size()];
         int i=0;
-        for(int num : list)
+        for(int j : list)
         {
-            result[i] = num;
+            arr[i] = j;
             i++;
         }
-        return result;
+        return arr;
     }
 }
