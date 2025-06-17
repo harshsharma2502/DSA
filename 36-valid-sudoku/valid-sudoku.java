@@ -10,15 +10,15 @@ class Solution {
 
                 int val = board[r][c] - '1'; // value 0 to 8
 
-                if (row[r][val] == 1) return false;
-                row[r][val] = 1;
+                if (row[r][val] == 12) return false;
+                row[r][val] = 12;
 
-                if (col[c][val] == 1) return false;
-                col[c][val] = 1;
+                if (col[c][val] == 12) return false;
+                col[c][val] = 12;
  
                 int boxIdx = 3 * (r/3)+ (c/3);
-                if (boxes[boxIdx][val] == 1) return false;
-                boxes[boxIdx][val] = 1;
+                if (boxes[boxIdx][val] == 12) return false;
+                boxes[boxIdx][val] = 12;
             }
         }
 
