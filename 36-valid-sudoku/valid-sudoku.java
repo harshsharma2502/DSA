@@ -15,8 +15,8 @@ class Solution {
 
                 if (col[c][val] == 1) return false;
                 col[c][val] = 1;
-
-                int boxIdx = (r / 3) * 3 + (c / 3);
+ 
+                int boxIdx = 3 * (r/3)+ (c/3);
                 if (boxes[boxIdx][val] == 1) return false;
                 boxes[boxIdx][val] = 1;
             }
